@@ -2,6 +2,12 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
+
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PNOAH
 {
@@ -17,6 +23,9 @@ namespace PNOAH
         protected override void OnStart()
         {
             // Handle when your app starts
+
+            AppCenter.Start("android=8011d2e1-9e2d-4bad-8069-d686596fcaff;" + "ios=a5abd485-21d7-4230-873d-399cabf53419", typeof(Analytics), typeof(Crashes), typeof(Distribute));
+
         }
 
         protected override void OnSleep()
