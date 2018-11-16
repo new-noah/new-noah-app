@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:PNOAH" 
+    xmlns:pages="clr-namespace:PNOAH.Views.Pages" 
+    x:Class="PNOAH.Views.Pages.MainPage">
+    <NavigationPage Title="Животные">
+        <x:Arguments>
+            <pages:AnimalListPage>
+            </pages:AnimalListPage>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Проекты">
+        <x:Arguments>
+            <pages:ProjectListPage>
+            </pages:ProjectListPage>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Мои животные и проекты">
+        <x:Arguments>
+            <pages:PatroneSelfPage>
+            </pages:PatroneSelfPage>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

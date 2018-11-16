@@ -7,6 +7,8 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Distribute;
 
+using PNOAH.Views.Pages;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PNOAH

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    Padding="0,0,12,0"
+    x:Class="PNOAH.Views.Navigation.NavigationViewAnimal">
+    <ContentView.Content>
+        <FlexLayout
+            JustifyContent="SpaceBetween"
+            AlignItems="Start">
+            <Label Text="Logo" TextColor="White"/>    
+            <Label Text="Добавить" TextColor="White"/>    
+        </FlexLayout>
+    </ContentView.Content>
+</ContentView>
