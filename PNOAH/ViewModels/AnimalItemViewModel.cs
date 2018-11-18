@@ -38,7 +38,7 @@ namespace PNOAH.ViewModels
             get => AnimalModel.Name;
         }
 
-        public string Donated { get; set; } = "Donated: ";
+        public string Donated { get; set; } = "Donate";
 
         public string ContractBalance { get; set; }
 
@@ -68,7 +68,7 @@ namespace PNOAH.ViewModels
 
             } catch (Exception e)
             {
-
+                Debug.WriteLine(e.Message);
             }
         }
 
@@ -83,7 +83,7 @@ namespace PNOAH.ViewModels
                     CanExePayCmd = false;
                     await PayAsync();
                     await GetContractAsync();
-                    Donated = "Donated: ";
+                    Donated = "Donate";
                     CanExePayCmd = true;
                 });
             }

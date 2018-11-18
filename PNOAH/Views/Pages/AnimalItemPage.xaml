@@ -31,7 +31,7 @@
                         Text="{Binding AboutAnimal}" />
                     <StackLayout 
                         Orientation="Horizontal">
-                        <Label Text="{Binding Donated}" Style="{DynamicResource TitleStyle}"/>
+                        <Label Text="Donted: " Style="{DynamicResource TitleStyle}"/>
                         <Label 
                             Text="{Binding ContractBalance, Converter={StaticResource DTCConverter}" Style="{DynamicResource TitleStyle}"/>
                     </StackLayout>
@@ -40,7 +40,7 @@
                     <Button 
                         IsEnabled="{Binding CanExePayCmd}"
                         HeightRequest="36"
-                        Text="Donate"
+                        Text="{Binding Donated}"
                         Margin="0, 35, 0, 0"
                         Command="{Binding PayCommand}"
                         HorizontalOptions="FillAndExpand"
