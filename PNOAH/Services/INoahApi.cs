@@ -17,5 +17,14 @@ namespace PNOAH.Services
         Task<List<AnimalModel>> GetAnimals();
 
         #endregion
+
+        #region User Payments
+        [Get("/get_contract_balance")]
+        Task<ContractModel> GetContractBalance();
+        [Get("/get_user_balance")]
+        Task<UserModel> GetUserBalance();
+        [Get("/pay")]
+        Task<PayResponse> Pay();
+        #endregion
     }
 }

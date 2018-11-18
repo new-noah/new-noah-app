@@ -9,7 +9,9 @@
             SelectionMode="None"
             ItemTapped="Handle_ItemTapped"
             ItemsSource="{Binding Animals}"
-            IsPullToRefreshEnabled="false"
+            IsPullToRefreshEnabled="True"
+            RefreshCommand="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}"
             SeparatorColor="Transparent"
             HasUnevenRows="true">
             <ListView.ItemTemplate>
