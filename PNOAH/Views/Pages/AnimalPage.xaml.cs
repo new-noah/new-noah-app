@@ -12,6 +12,7 @@ using System.Diagnostics;
 using Newtonsoft;
 using Newtonsoft.Json;
 using PNOAH.Services;
+using System.Threading.Tasks;
 namespace PNOAH.Views.Pages
 {
     public partial class SubmitAnimalPage : ContentPage
@@ -34,7 +35,7 @@ namespace PNOAH.Views.Pages
 
             if(_lastPhoto != null)
             {
-                Upload(_lastPhoto);
+                upphoto();
             }
 
         }
@@ -45,8 +46,13 @@ namespace PNOAH.Views.Pages
             if(_lastPhoto != null) photoHolder.Source = ImageSource.FromStream(_lastPhoto.GetStream);
         }
 
+        async void upphoto()
+        {
+            await Upload(_lastPhoto);
+            await DisplayAlert("Loading", "Animal added", "OK");
+        }
 
-        public static void Upload(MediaFile mediaFile)
+        public  Task Upload(MediaFile mediaFile)
         {
             try
             {
@@ -66,16 +72,20 @@ namespace PNOAH.Views.Pages
                 };
 
                 client.BaseAddress = new Uri(NOAHConst.BASE_SERVER);
-                var result = client.PostAsync( NOAHConst.UPLOAD, multi).Result;
+                var result =  client.PostAsync( NOAHConst.UPLOAD, multi).Result;
 
                 Debug.WriteLine(result.ReasonPhrase);
                 var resstr = result.Content.ReadAsStringAsync();
                 Debug.WriteLine( resstr.Result);
+                return Task.CompletedTask;
+
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e);
+                return Task.CompletedTask;
             }
+
         }
     }
 }

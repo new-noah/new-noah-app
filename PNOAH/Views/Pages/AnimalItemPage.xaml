@@ -31,7 +31,7 @@
                         Text="{Binding AboutAnimal}" />
                     <StackLayout 
                         Orientation="Horizontal">
-                        <Label Text="Donted: " Style="{DynamicResource TitleStyle}"/>
+                        <Label Text="Donated: " Style="{DynamicResource TitleStyle}"/>
                         <Label 
                             Text="{Binding ContractBalance, Converter={StaticResource DTCConverter}" Style="{DynamicResource TitleStyle}"/>
                     </StackLayout>
