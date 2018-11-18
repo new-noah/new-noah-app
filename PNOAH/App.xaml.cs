@@ -8,6 +8,7 @@ using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Distribute;
 
 using PNOAH.Views.Pages;
+using PNOAH.Models;
 
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,6 +16,8 @@ namespace PNOAH
 {
     public partial class App : Application
     {
+        //public UserModel UserModel { get; set; } = new UserModel();
+
         public App()
         {
             InitializeComponent();

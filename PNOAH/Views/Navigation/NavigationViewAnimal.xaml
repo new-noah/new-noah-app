@@ -3,12 +3,34 @@
     Padding="0,0,12,0"
     x:Class="PNOAH.Views.Navigation.NavigationViewAnimal">
     <ContentView.Content>
-        <FlexLayout 
-            JustifyContent="SpaceBetween"
-            AlignItems="Center">
-            <Image Source="logo"/>    
+        <Grid 
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            
+            <Image Aspect="AspectFit"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Source="logo" Grid.Row="0" Grid.Column="0"/>
+            <Label x:Name="userBalance" Text="{Binding Balance}" 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Grid.Row="0" Grid.Column="1"
+                TextColor="White"/>
             <Button Image="round_add_white_36.png"
-                Clicked="Handle_Clicked"/>    
-        </FlexLayout>
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Grid.Row="0" Grid.Column="2"
+                Clicked="Handle_Clicked"/>
+            
+        </Grid>
     </ContentView.Content>
 </ContentView>

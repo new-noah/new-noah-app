@@ -23,10 +23,20 @@
                         Style="{DynamicResource BodyStyle}"
                         TextColor="#8B000000"
                         Text="{Binding AboutAnimal}" />
+                    <StackLayout 
+                        Orientation="Horizontal">
+                        <Label Text="Contract: " Style="{DynamicResource TitleStyle}"/>
+                        <Label 
+                            Text="{Binding ContractBalance}" Style="{DynamicResource TitleStyle}"/>
+                    </StackLayout>
+                                 
+                    
                     <Button 
+                        IsEnabled="{Binding CanExePayCmd}"
                         HeightRequest="36"
                         Text="Take care"
                         Margin="0, 35, 0, 0"
+                        Command="{Binding PayCommand}"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="End"/>
                 </StackLayout>

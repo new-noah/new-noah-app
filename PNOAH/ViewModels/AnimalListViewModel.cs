@@ -24,6 +24,8 @@ namespace PNOAH.ViewModels
 
         public bool IsRefreshing { get; set; } = false;
 
+        public NavigationAnimalViewModel ViewModelNavigation { get; set; }
+
         public ICommand RefreshCommand
         {
             get
@@ -33,8 +35,20 @@ namespace PNOAH.ViewModels
                     IsRefreshing = true;
 
                     await RefreshData();
+                    await RefreshBalance();
 
                     IsRefreshing = false;
+                });
+            }
+        }
+
+        public ICommand RefreshBalanceCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await RefreshBalance();
                 });
             }
         }
@@ -44,8 +58,8 @@ namespace PNOAH.ViewModels
             Animals.Clear();
             try
             {
-                var apiAnimal = RestService.For<INoahApi>(NOAHConst.BASE_SERVER);
-                var response = await apiAnimal.GetAnimals();
+                var API = RestService.For<INoahApi>(NOAHConst.BASE_SERVER);
+                var response = await API.GetAnimals();
                 Animals = response;
 
                 IsInitialized = true;
@@ -55,6 +69,24 @@ namespace PNOAH.ViewModels
                 Debug.WriteLine(e.Message);
             }
             catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+
+        }
+
+
+        private async Task RefreshBalance()
+        {
+            try
+            {
+                var API = RestService.For<INoahApi>(NOAHConst.BASE_SERVER);
+                var response = await API.GetUserBalance();
+                if (ViewModelNavigation != null)
+                {
+                    ViewModelNavigation.Balance = response.Balance;
+                }
+            } catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
             }

@@ -6,6 +6,6 @@ namespace PNOAH.Models
     public class ContractModel
     {
         public string Result { get; set; }
-        public string Balance { get; set; }
+        public string Balance { get; set; } = "00000000000";
     }
 }
