@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="PNOAH.Views.Pages.AnimalItemPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="0"
+                    Margin="40, 20, 40, 0"
+                    Source="{Binding Url}"/>
+                <StackLayout Grid.Row="1" Grid.Column="0"
+                        Padding="40, 20, 40, 20">
+                    <Label Grid.Row="1" Grid.Column="1"
+                        Margin="0, 16, 0, 0"
+                        Text="{Binding Name}" Style="{DynamicResource TitleStyle}" TextColor="#212121" />
+                    <Label Grid.Row="0" Grid.Column="1" 
+                        Style="{DynamicResource BodyStyle}"
+                        TextColor="#8B000000"
+                        Text="{Binding AboutAnimal}" />
+                    <Button 
+                        HeightRequest="36"
+                        Text="Take care"
+                        Margin="0, 35, 0, 0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"/>
+                </StackLayout>
+            </Grid>    
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

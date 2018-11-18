@@ -3,11 +3,12 @@
     Padding="0,0,12,0"
     x:Class="PNOAH.Views.Navigation.NavigationViewAnimal">
     <ContentView.Content>
-        <FlexLayout
+        <FlexLayout 
             JustifyContent="SpaceBetween"
-            AlignItems="Start">
-            <Label Text="Logo" TextColor="White"/>    
-            <Label Text="Добавить" TextColor="White"/>    
+            AlignItems="Center">
+            <Image Source="logo"/>    
+            <Button Image="round_add_white_36.png"
+                Clicked="Handle_Clicked"/>    
         </FlexLayout>
     </ContentView.Content>
 </ContentView>

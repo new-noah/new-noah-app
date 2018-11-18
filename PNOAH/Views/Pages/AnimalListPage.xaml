@@ -2,8 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
      xmlns:nav="clr-namespace:PNOAH.Views.Navigation"
      NavigationPage.TitleView="{nav:NavigationViewAnimal}"
+     Padding="0, 12, 0, 0"
      x:Class="PNOAH.Views.Pages.AnimalListPage">
     <ContentPage.Content>
-        <Label Text="Animal"/>
+        <ListView x:Name="listAnimals"
+            SelectionMode="None"
+            ItemTapped="Handle_ItemTapped"
+            ItemsSource="{Binding Animals}"
+            IsPullToRefreshEnabled="false"
+            SeparatorColor="Transparent"
+            HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="32, 12, 32, 12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions ColumnSpacing="0">
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0"
+                                Source="{Binding Url}" Aspect="AspectFill"/>
+                            <StackLayout 
+                                Padding="18, 0, 0, 0"
+                                Grid.Row="0" Grid.Column="1"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Label 
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start"
+                                    Text="{Binding Name}" TextColor="#212121" FontSize="24"/>
+                                <Label 
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start"
+                                    Text="{Binding KindPerson}" FontSize="14" />
+                                <Button 
+                                    HeightRequest="36"
+                                    Text="Take care"
+                                    Margin="0, 35, 0, 0"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="End"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

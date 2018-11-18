@@ -19,7 +19,7 @@ namespace PNOAH
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new AnimalListPage());
         }
 
         protected override void OnStart()

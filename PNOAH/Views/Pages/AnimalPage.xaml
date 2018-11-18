@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PNOAH.Views.Pages.SubmitAnimalPage">
+    <ContentPage.Content>
+        <FlexLayout
+            Direction="Column"
+            AlignItems="Center"
+            JustifyContent="Center">
+            
+            <Image x:Name="photoHolder" 
+                   Aspect="Fill"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Source="img_logo.png" />
+            
+            <StackLayout Spacing="16"
+                Margin="32"
+                Orientation="Horizontal">
+                <Button x:Name="takePhotoButton" 
+                        Image="round_add_a_photo_white_36.png"
+                        Clicked="OnButtonClicked"/>
+                <Button x:Name="uploadPhoto"  
+                        Image="round_backup_white_36.png"
+                        Clicked="OnUploadClicked"/>    
+            </StackLayout>
+            
+            
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

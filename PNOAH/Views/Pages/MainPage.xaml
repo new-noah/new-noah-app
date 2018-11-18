@@ -9,16 +9,16 @@
             </pages:AnimalListPage>
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Проекты">
+    <!--<NavigationPage Title="Проекты">
         <x:Arguments>
             <pages:ProjectListPage>
             </pages:ProjectListPage>
         </x:Arguments>
-    </NavigationPage>
-    <NavigationPage Title="Мои животные и проекты">
+    </NavigationPage>-->
+    <!--<NavigationPage Title="Мои животные и проекты">
         <x:Arguments>
             <pages:PatroneSelfPage>
             </pages:PatroneSelfPage>
         </x:Arguments>
-    </NavigationPage>
+    </NavigationPage>-->
 </TabbedPage>

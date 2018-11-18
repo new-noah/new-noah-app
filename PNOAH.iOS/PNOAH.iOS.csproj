@@ -168,6 +168,9 @@
     <PackageReference Include="Xamarin.Essentials">
       <Version>0.11.0-preview</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -175,5 +178,14 @@
       <Project>{F269EC09-220C-4998-927A-37C4A1F90F16}</Project>
       <Name>PNOAH</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\img_take_care.png" />
+    <AndroidResource Include="Resources\img_submit_ph.png" />
+    <AndroidResource Include="Resources\img_logo.png" />
+    <AndroidResource Include="Resources\round_add_a_photo_white_48.png" />
+    <AndroidResource Include="Resources\round_add_a_photo_white_36.png" />
+    <AndroidResource Include="Resources\round_add_white_36.png" />
+    <AndroidResource Include="Resources\round_backup_white_36.png" />
   </ItemGroup>
 </Project>
