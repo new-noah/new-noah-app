@@ -38,6 +38,8 @@ namespace PNOAH.ViewModels
             get => AnimalModel.Name;
         }
 
+        public string Donated { get; set; } = "Donated: ";
+
         public string ContractBalance { get; set; }
 
         public bool CanExePayCmd { get; set; } = true;
@@ -77,8 +79,11 @@ namespace PNOAH.ViewModels
                 return new Command(async () =>
                 {
                     if (!CanExePayCmd) return;
+                    Donated = "Transaction ... ";
                     CanExePayCmd = false;
                     await PayAsync();
+                    await GetContractAsync();
+                    Donated = "Donated: ";
                     CanExePayCmd = true;
                 });
             }
